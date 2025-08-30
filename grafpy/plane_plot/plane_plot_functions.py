@@ -30,3 +30,15 @@ def plot_pontos(lista_x: list[float], lista_y: list[float], lista_c: list[str]):
     plot_ponto(lista_x[i], lista_y[i], lista_c[i])
     i += 1
   plt.show()
+
+#---------------------------------------------------------------------------------
+# Função que plota um vetor (a,b) de origem (a1,a2) e final (b1, b2) e cor "c":
+def plot_vetor(origin: list[float], final: list[float], c: str):
+  fig, ax = plt.subplots()
+  ax.quiver(origin[0], origin[1], final[0], final[1],
+            angles = 'xy', scale_units = 'xy', scale = 1, color = c)
+  ax.set_aspect('equal', adjustable='box')
+  ax.set_xlim([origin[0] - 1, final[0] + 1])
+  ax.set_ylim([origin[1]- 1, final[1]+ 2])
+  ax.grid(True)
+  plt.show()
